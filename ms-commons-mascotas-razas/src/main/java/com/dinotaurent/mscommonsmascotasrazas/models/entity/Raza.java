@@ -95,6 +95,19 @@ public class Raza {
         this.createAt = createAt;
     }
 
+    public void addMascota(Mascota mascota){
+        this.mascotas.add(mascota);
+    }
+
+    public void addRazaMascotas(RazaMascotas razaMascotas){
+        this.razaMascotas.add(razaMascotas);
+    }
+
+    public void removeRazaMascotas(RazaMascotas razaMascotas){
+        this.razaMascotas.remove(razaMascotas);
+    }
+
+
 
 
 }

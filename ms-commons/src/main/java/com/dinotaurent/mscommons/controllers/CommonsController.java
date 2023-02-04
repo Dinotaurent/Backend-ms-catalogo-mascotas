@@ -17,17 +17,17 @@ public class CommonsController<E, S extends ICommonsService<E>> {
     protected S service;
 
     @GetMapping("/")
-    ResponseEntity<?> listar() {
+    public ResponseEntity<?> listar() {
         return ResponseEntity.ok(service.findAll());
     }
 
     @GetMapping("/pagina")
-    ResponseEntity<?> listarXpaginas(Pageable pageable) {
+    public ResponseEntity<?> listarXpaginas(Pageable pageable) {
         return ResponseEntity.ok(service.findAll(pageable));
     }
 
     @GetMapping("/{id}")
-    ResponseEntity<?> listarXId(@PathVariable Long id) {
+    public ResponseEntity<?> listarXId(@PathVariable Long id) {
         Optional<E> o = service.findById(id);
         if (o.isPresent()) {
             return ResponseEntity.ok(o.get());
@@ -36,7 +36,7 @@ public class CommonsController<E, S extends ICommonsService<E>> {
     }
 
     @PostMapping("/")
-    ResponseEntity<?> crear(@Valid @RequestBody E entity, BindingResult result) {
+    public ResponseEntity<?> crear(@Valid @RequestBody E entity, BindingResult result) {
         return result.hasErrors()
                 ? mostrarErrores(result)
                 : ResponseEntity.status(HttpStatus.CREATED).body(service.save(entity));
@@ -44,7 +44,7 @@ public class CommonsController<E, S extends ICommonsService<E>> {
 
 
     @DeleteMapping("/{id}")
-    ResponseEntity<?> eliminar(@PathVariable Long id) {
+    public ResponseEntity<?> eliminar(@PathVariable Long id) {
         Optional<E> o = service.findById(id);
         if (o.isPresent()) {
             service.deleteById(id);

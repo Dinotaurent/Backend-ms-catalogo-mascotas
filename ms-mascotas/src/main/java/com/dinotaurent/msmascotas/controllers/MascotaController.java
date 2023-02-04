@@ -17,7 +17,7 @@ import java.util.Optional;
 public class MascotaController extends CommonsController<Mascota, IMascotaService> {
 
     @PutMapping("/{id}")
-    ResponseEntity<?> actualizar(@PathVariable Long id, @RequestBody Mascota mascota, BindingResult result){
+    public ResponseEntity<?> actualizar(@PathVariable Long id, @RequestBody Mascota mascota, BindingResult result){
         Optional<Mascota> o = service.findById(id);
 
         if(o.isPresent()){
