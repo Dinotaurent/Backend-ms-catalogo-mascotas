@@ -3,7 +3,7 @@ eureka:
         fetch-registry: false
         register-with-eureka: false
 server:
-    port: 8862
+    port: 8761
 spring:
     application:
         name: ms-eureka-server
