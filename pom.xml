@@ -15,7 +15,10 @@
     <packaging>pom</packaging>
 
     <modules>
-
+        <module>ms-eureka-server</module>
+        <module>ms-razas</module>
+        <module>ms-mascotas</module>
+        <module>ms-gateway-catalogo-mascotas</module>
     </modules>
 
     <groupId>org.example</groupId>

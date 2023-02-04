@@ -5,6 +5,13 @@
     <option name="originalFiles">
       <list>
         <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/ms-eureka-server/ms-eureka-server/pom.xml" />
+        <option value="$PROJECT_DIR$/ms-eureka-server/pom.xml" />
+        <option value="$PROJECT_DIR$/ms-razas/pom.xml" />
+        <option value="$PROJECT_DIR$/ms-mascotas/pom.xml" />
+        <option value="$PROJECT_DIR$/ms-gateway-catalogo-mascotas/pom.xml" />
+        <option value="$PROJECT_DIR$/ms-commons/pom.xml" />
+        <option value="$PROJECT_DIR$/ms-commons-mascotas-razas/pom.xml" />
       </list>
     </option>
   </component>

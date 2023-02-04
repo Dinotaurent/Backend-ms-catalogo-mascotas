@@ -1,0 +1,38 @@
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8862/eureka
+  instance:
+    prefer-ip-address: true
+server:
+  port: 8091
+spring:
+  application:
+    name: ms-gateway-catalogo-mascotas
+  cloud:
+    gateway:
+      globalcors:
+        corsConfigurations:
+          '[/**]':
+            allowedOrigins:
+              - 'http://localhost:4200'
+            allowedHeaders:
+              - Content-Type
+            allowedMethods:
+              - GET
+              - POST
+              - PUT
+              - DELETE
+      routes:
+        - filters: StripPrefix=2
+          id: ms-mascotas
+          predicates: Path=/api/mascotas/**
+          uri: lb://ms-mascotas
+        - filters: StripPrefix=2
+          id: ms-razas
+          predicates: Path=/api/razas/**
+          uri: lb://ms-razas
+
+loadbalancer:
+  ribbon:
+    enable: false
