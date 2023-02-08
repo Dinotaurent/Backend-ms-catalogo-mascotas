@@ -77,6 +77,10 @@ public class Mascota {
         this.foto = foto;
     }
 
+    public Integer getFotoHashCode() {
+        return (this.foto != null) ? this.foto.hashCode(): null;
+    }
+
     @Override
     public boolean equals(Object obj) {
         if (this == obj) {

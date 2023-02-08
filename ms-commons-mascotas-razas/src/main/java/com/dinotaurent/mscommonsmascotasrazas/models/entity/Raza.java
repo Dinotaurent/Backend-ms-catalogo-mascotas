@@ -40,6 +40,10 @@ public class Raza {
         this.foto = foto;
     }
 
+    public Integer getFotoHashCode() {
+        return (this.foto != null) ? this.foto.hashCode(): null;
+    }
+
     @Lob
     @JsonIgnore
     private byte[] foto;
