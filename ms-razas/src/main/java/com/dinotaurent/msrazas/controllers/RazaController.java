@@ -65,8 +65,8 @@ public class RazaController extends CommonsController<Raza, IRazaService> {
         return ResponseEntity.notFound().build();
     }
 
-    @GetMapping("/buscar-raza-x-nombre/{termino}")
-    public ResponseEntity<?> buscarRazaXNombre(@PathVariable String termino){
+    @GetMapping("/buscar-x-nombre/{termino}")
+    public ResponseEntity<?> buscarXNombre(@PathVariable String termino){
         return  ResponseEntity.ok(service.findByNombreContaining(termino));
     }
 
@@ -160,8 +160,6 @@ public class RazaController extends CommonsController<Raza, IRazaService> {
         }
         return ResponseEntity.notFound().build();
     }
-
-    @PutMapping("/{id}/asignar-foto")
 
     @DeleteMapping("/eliminar-razaMascotas/{mascotaId}")
     public ResponseEntity<?> eliminarRazaMascotas(@PathVariable Long mascotaId){

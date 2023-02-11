@@ -39,11 +39,13 @@ public class MascotaServiceImpl extends CommonsServiceImpl<Mascota, IMascotaDao>
     }
 
     @Override
+    @Transactional(readOnly = true)
     public List<Mascota> findAll() {
         return dao.findAllByOrderByIdAsc();
     }
 
     @Override
+    @Transactional(readOnly = true)
     public Page<Mascota> findAll(Pageable pageable) {
         return dao.findAllByOrderByIdAsc(pageable);
     }

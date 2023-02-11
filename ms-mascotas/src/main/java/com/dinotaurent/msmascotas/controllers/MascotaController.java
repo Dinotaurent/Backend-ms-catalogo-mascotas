@@ -26,8 +26,8 @@ public class MascotaController extends CommonsController<Mascota, IMascotaServic
         return ResponseEntity.ok(service.findAllByIds(ids));
     }
 
-    @GetMapping("/buscar-mascota-x-nombre/{termino}")
-    public ResponseEntity<?> buscarMascotaXNombre(@PathVariable String termino){
+    @GetMapping("/buscar-x-nombre/{termino}")
+    public ResponseEntity<?> buscarXNombre(@PathVariable String termino){
         return ResponseEntity.ok(service.findByNombreContaining(termino));
     }
 

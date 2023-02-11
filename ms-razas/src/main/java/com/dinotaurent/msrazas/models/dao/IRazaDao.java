@@ -16,4 +16,5 @@ public interface IRazaDao extends ICrudAndPagingRepository<Raza,Long> {
 
     @Query("select r from Raza r where upper(r.nombre) like upper(concat('%',?1,'%'))")
     List<Raza> findByNombreContaining(String termino);
+
 }
